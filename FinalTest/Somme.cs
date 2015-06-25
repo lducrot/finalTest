@@ -2,7 +2,7 @@
 
 namespace FinalTest.Tests
 {
-    public class Somme
+    public class Somme : IOperation
     {
 
         public Somme() { }

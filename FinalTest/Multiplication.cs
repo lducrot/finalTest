@@ -2,11 +2,9 @@
 
 namespace FinalTest.Tests
 {
-    public class Multiplication
+    public class Multiplication : IOperation
     {
-        public Multiplication()
-        {
-        }
+        public Multiplication() { }
 
         public Boolean PeutCalculer(string chaine)
         {
