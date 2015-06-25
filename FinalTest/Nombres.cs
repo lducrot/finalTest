@@ -22,6 +22,7 @@ namespace FinalTest.Tests
             get { return LettresImpairs.Aggregate(string.Empty, (x, y) => x + ", " + y).Substring(2); }
         }
 
+
         //Ca marche aussi !
         //public String PremierNombreDontLeTexteContientPlusDe5CaractèresEntier
         //{
@@ -31,10 +32,17 @@ namespace FinalTest.Tests
         //{
         //    get { return PremierNombreDontLeTexteContientPlusDe5CaractèresEntier.Substring(0, PremierNombreDontLeTexteContientPlusDe5CaractèresEntier.Length - 4).Substring(1); }
         //}
-        public string PremierNombreDontLeTexteContientPlusDe5Caractères
+        public String PremierNombreDontLeTexteContientPlusDe5Caractères
         {
             get { return _keyValuePairs.Where(x => x.Key.Length > 5).Select(x => x.Key).First(); }
         }
+
+
+        public IEnumerable<int> QuatreNombresSupérieursSuivant3
+        {
+            get { return _keyValuePairs.OrderBy(x => x.Value).Skip(3).Take(4).Select(x => x.Value); }
+        } 
+        
 
         public Nombres(IEnumerable<KeyValuePair<string, int>> keyValuePairs)
         {

@@ -102,22 +102,25 @@ namespace FinalTest.Tests
             Check.That(premierNombreDontLeTexteContientPlusDe5Caractères).IsEqualTo("dix-sept");
         }
 
-        //[Test]
-        //public void RécupérerLes4NombresSupérieursA3()
-        //{
-        //    var nombres = new Nombres(keyValuePairs);
-        //    var quatreNombresSupérieursSuivant3 = nombres.QuatreNombresSupérieursSuivant3; // retourne un IEnumerable<int> en utilisant Linq (i.e sans utiliser de boucles) -> OrderBy + Skip + Take
+        [Test]
+        public void RécupérerLes4NombresSupérieursA3()
+        {
+            var nombres = new Nombres(keyValuePairs);
 
-        //    Check.That(quatreNombresSupérieursSuivant3).ContainsExactly(4, 5, 6, 7);
-        //}
+            // retourne un IEnumerable<int> en utilisant Linq 
+            //(i.e sans utiliser de boucles) -> OrderBy + Skip + Take
+            var quatreNombresSupérieursSuivant3 = nombres.QuatreNombresSupérieursSuivant3; 
 
-        //[Test]
-        //public void RécupérerLes4NombresSupérieursA3Bis()
-        //{
-        //    var nombres = new Nombres(otherKeyValuePairs);
-        //    var quatreNombresSupérieursSuivant3 = nombres.QuatreNombresSupérieursSuivant3; // meme propriété
+            Check.That(quatreNombresSupérieursSuivant3).ContainsExactly(4, 5, 6, 7);
+        }
 
-        //    Check.That(quatreNombresSupérieursSuivant3).ContainsExactly(10, 17, 23, 28);
-        //}
+        [Test]
+        public void RécupérerLes4NombresSupérieursA3Bis()
+        {
+            var nombres = new Nombres(otherKeyValuePairs);
+            var quatreNombresSupérieursSuivant3 = nombres.QuatreNombresSupérieursSuivant3; // meme propriété
+
+            Check.That(quatreNombresSupérieursSuivant3).ContainsExactly(10, 17, 23, 28);
+        }
     }
 }
