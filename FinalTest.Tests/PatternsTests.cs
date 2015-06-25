@@ -7,16 +7,18 @@ namespace FinalTest.Tests
     [TestFixture]
     public class PatternsTests
     {
-        private readonly string _numéroDeCompte = Guid.NewGuid().ToString();
+        private readonly string _numeroDeCompte = Guid.NewGuid().ToString();
 
-        //[Test]
-        //public void OuvrirUnCompteBancaireProduitUnEvénement()
-        //{
-        //    var autorisationDeCrédit = 0;
-        //    var evenements = CompteBancaire.Ouvrir(_numéroDeCompte, autorisationDeCrédit); // retourne un IEnumerable<IEvenementMetier> contenant l'événement CompteCréé
+        [Test]
+        public void OuvrirUnCompteBancaireProduitUnEvénement()
+        {
+            var autorisationDeCredit = 0;
 
-        //    Check.That(evenements).ContainsExactly(new CompteCréé(_numéroDeCompte, autorisationDeCrédit));
-        //}
+            // retourne un IEnumerable<IEvenementMetier> contenant l'événement CompteCréé
+            var evenements = CompteBancaire.Ouvrir(_numeroDeCompte, autorisationDeCredit); 
+
+            Check.That(evenements).ContainsExactly(new CompteCree(_numeroDeCompte, autorisationDeCredit));
+        }
 
         //[Test]
         //public void EtantDonnéUnCompteBancaireFaireUnDepotProduitUnEvenement()

@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculatrice.cs" />
+    <Compile Include="CompteBancaire.cs" />
+    <Compile Include="IEvenementMetier.cs" />
     <Compile Include="IOperation.cs" />
     <Compile Include="Multiplication.cs" />
     <Compile Include="Nombres.cs" />
